@@ -10,7 +10,7 @@ class Book(models.Model):
     edition = models.IntegerField()
     price = models.DecimalField(max_digits=8, decimal_places=2)
     quantity = models.IntegerField()
-    image = models.ImageField(upload_to='product_images/')
+    cover = models.ImageField(upload_to='book_covers/')
 
     def __str__(self):
         return self.title
