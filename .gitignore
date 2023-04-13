@@ -1,0 +1,22 @@
+# Arquivos de configuração e dados sensíveis
+venv/
+*.pyc
+*.pyo
+*.env
+*.sqlite3
+*.pyc
+*.pyo
+
+# Diretórios que não devem ser versionados
+__pycache__/
+node_modules/
+staticfiles/
+media/
+
+# Arquivos de desenvolvimento local
+*.log
+*.swp
+.DS_Store
+
+# Arquivos de testes
+.coverage
