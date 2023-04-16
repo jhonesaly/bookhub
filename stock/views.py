@@ -6,8 +6,20 @@ def index(request):
     return HttpResponse("Hello, world. You're at index.")
 
 def form(request):
-    form = BookForm()
-    context = {
-        'form': form
-    }
-    return render(request, "form.html", context=context)
+    if request.method == "GET":
+        form = BookForm()
+        context = {
+            'form': form
+        }
+        return render(request, "form.html", context=context)
+    else: 
+        form = BookForm(request.POST)
+        if form.is_valid():
+            book = form.save()
+            form = BookForm()
+            context = {
+                'form': form
+            }
+            return render(request, "form.html", context=context)
+
+        
