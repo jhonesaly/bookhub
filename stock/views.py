@@ -6,4 +6,8 @@ def index(request):
     return HttpResponse("Hello, world. You're at index.")
 
 def form(request):
-    return render(request, "form.html")
+    form = BookForm()
+    context = {
+        'form': form
+    }
+    return render(request, "form.html", context=context)
