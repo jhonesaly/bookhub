@@ -2,14 +2,12 @@
 
 {% block content %}
   <h1>Catálogo de Livros</h1>
-  {% for book in book_list %}
+  {% for book in object_list %}
     <div>
       <h2>{{ book.title }}</h2>
       <p>Autor: {{ book.author }}</p>
-      <p>Descrição: {{ book.description }}</p>
       <p>Preço: {{ book.price }}</p>
-      <p>Data de publicação: {{ book.published_date }}</p>
-      <a href="{% url 'book' book.pk %}">Ver detalhes</a>
+      <a href="{% url 'detail' book.pk %}">Ver detalhes</a>
     </div>
   {% endfor %}
 {% endblock %}
