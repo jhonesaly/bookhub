@@ -1,5 +1,10 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView, DetailView
+from .models import Book
 
-def index(request):
-    return HttpResponse("Hello, world. You're at index.")
+
+class BookListView(ListView):
+    model = Book
+    template_name = 'catalog.html'
+    context_object_name = 'books'
+
+
