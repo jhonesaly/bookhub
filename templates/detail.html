@@ -2,8 +2,18 @@
 
 {% block content %}
   <h1>{{ book.title }}</h1>
-  <p>Autor: {{ book.author }}</p>
-  <p>Descrição: {{ book.description }}</p>
-  <p>Preço: {{ book.price }}</p>
-  <p>Data de publicação: {{ book.published_date }}</p>
+  <div class="book-cover">
+    <img src="{{ book.cover.url }}" alt="{{ book.title }}"/>
+  </div>
+  <ul>
+    <li>Autor: {{ book.author }}</li>
+    <li>Editora: {{ book.publisher }}</li>
+    <li>Edição: {{ book.edition }}</li>
+    <li>Preço: {{ book.price }}</li>
+    <li>Quantidade em estoque: {{ book.quantity }}</li>
+    <li>Ano de publicação: {{ book.year }}</li>
+    <li>Número de páginas: {{ book.num_pages }}</li>
+    <li>Idioma: {{ book.language }}</li>
+  </ul>
+  <p>{{ book.description }}</p>
 {% endblock %}
