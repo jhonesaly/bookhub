@@ -4,6 +4,9 @@
   <h1>Catálogo de Livros</h1>
   {% for book in object_list %}
     <div>
+      <div class="book-cover">
+        <img src="{{ book.cover.url }}" alt="{{ book.title }}"/>
+      </div>
       <h2>{{ book.title }}</h2>
       <p>Autor: {{ book.author }}</p>
       <p>Preço: {{ book.price }}</p>
