@@ -8,7 +8,7 @@ class BookListView(ListView):
     context_object_name = 'book'
 
 class BookDetailView(DetailView):
-    model = Livro
+    model = Book
     template_name = 'detail.html'
     context_object_name = 'book'
 
