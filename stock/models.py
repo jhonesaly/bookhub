@@ -20,8 +20,8 @@ class Book(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     title = models.CharField(max_length=255)
     description = models.TextField()
-    author = models.ManyToManyField(Author, blank = True) #many-to-many relationship
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Category") #one-to-many relationship
+    author = models.ManyToManyField(Author, blank=True) #many-to-many relationship
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Category", blank=True) #one-to-many relationship
     publisher = models.CharField(max_length=255)
     edition = models.IntegerField()
     price = models.DecimalField(max_digits=8, decimal_places=2)
