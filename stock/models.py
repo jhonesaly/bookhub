@@ -1,7 +1,21 @@
 from django.db import models
 from django.utils.html import format_html
+from django.conf import settings
 
 # Create your models here.
+
+class Author(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name 
+
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name 
 class Book(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     title = models.CharField(max_length=255)
