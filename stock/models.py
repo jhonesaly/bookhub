@@ -6,6 +6,8 @@ from django.conf import settings
 
 class Author(models.Model):
     name = models.CharField(max_length=200)
+    resume = models.TextField()
+    photo = models.ImageField(upload_to='media/author', blank=True)
 
     def __str__(self):
         return self.name 
@@ -29,7 +31,7 @@ class Book(models.Model):
     year = models.IntegerField()
     num_pages = models.IntegerField()
     language = models.CharField(max_length=50)
-    cover = models.ImageField(upload_to='media/', blank=True)
+    cover = models.ImageField(upload_to='media/book', blank=True)
 
     def __str__(self): 
         return self.title
