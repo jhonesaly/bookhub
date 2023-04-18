@@ -1,10 +1,6 @@
 from django.contrib import admin
-from .models import Book
+from .models import Book, Author, Category
 
-class BookAdmin(admin.ModelAdmin):
-
-    search_fields = ('id', 'title', 'author', 'publisher')
-    list_filter = ('publisher', 'author')
-    ordering = ('title',)
-
-admin.site.register(Book, BookAdmin)
+admin.site.register(Book)
+admin.site.register(Author)
+admin.site.register(Category)
