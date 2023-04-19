@@ -10,7 +10,7 @@
       <h2>{{ book.title }}</h2>
       <p>Autor: {{ book.author }}</p>
       <p>Preço: {{ book.price }}</p>
-      <a href="{% url 'detail' book.pk %}">Ver detalhes</a>
+      <a href="{% url 'book_detail' book.pk %}">Ver detalhes</a>
     </div>
   {% endfor %}
 {% endblock %}
